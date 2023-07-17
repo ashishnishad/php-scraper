@@ -1,0 +1,16 @@
+{
+    "name": "nisha/php_scraper",
+    "authors": [
+        {
+            "name": "Ashish Nishad",
+            "email": "nishadashish94@gmail.com"
+        }
+    ],
+    "require": {
+        "simplehtmldom/simplehtmldom": "^2.0@RC",
+        "fabpot/goutte": "^4.0",
+        "guzzlehttp/guzzle": "^7.7"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
