@@ -1,5 +1,5 @@
 <?php
-require 'vendor/autoload.php';
+require __dir__.'\vendor/autoload.php';
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
 
