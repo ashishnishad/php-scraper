@@ -2,9 +2,6 @@
 require 'vendor/autoload.php';
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
-$response_body = getByType();
-$ce = $response_body->filtered->CE;
-$pe = $response_body->filtered->PE;
 
 ?>
 <table width="500" border="1">
@@ -60,16 +57,20 @@ function getByType($type="NIFTY"){
 	$option_chain_ind = "/api/option-chain-indices?symbol=".$type;
 
 	$httpClient = new \GuzzleHttp\Client([
-    'base_uri' => 'https://www.nseindia.com',
-    'defaults' => [
-        'exceptions' => false
-    ]
-]);
+				    'base_uri' => 'https://www.nseindia.com',
+				    'defaults' => [
+				        'exceptions' => false
+				    ]
+				]);
 
 
 
 	// $response = $httpClient->get('GET', $option_chain_ind);
-	$request = new Request('GET', $option_chain_ind);
+	$request = new Request('GET', $option_chain_ind, [
+	'headers' => [
+		'Accept' => 'application/json'
+	]
+]);
 
 	$response = $httpClient->send($request, [
 	    'headers' => [
